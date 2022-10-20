@@ -35,7 +35,7 @@
                     @dragover.prevent
                     @dragenter.prevent
                 >
-                    <span class="title">Open</span>
+                    <div class="title">Open</div>
                     <div
                         class="drag-el"
                         v-for="item in listOne"
@@ -54,7 +54,7 @@
                     @dragover.prevent
                     @dragenter.prevent
                 >
-                    <span class="title">Active</span>
+                    <div class="title">Active</div>
                     <div
                         class="drag-el"
                         v-for="item in listTwo"
@@ -73,7 +73,7 @@
                     @dragover.prevent
                     @dragenter.prevent
                 >
-                    <span class="title">Completed</span>
+                    <div class="title">Completed</div>
                     <div
                         class="drag-el completed"
                         v-for="item in listThree"
@@ -150,7 +150,6 @@
                 justify-content: center;
                 align-content:flex-start;
 
-                padding: 5px 0;
                 border-radius: 5px;
                 overflow: hidden;
 
@@ -158,15 +157,37 @@
             }
 
             .red-zone {
-                background-color: hsl(0, 50%, 50%);
+                background-color: hsl(350, 60%, 40%);
             }
 
             .yellow-zone {
-                background-color: hsl(40, 50%, 50%);
+                background-color: hsl(50, 100%, 40%);
             }
 
             .green-zone {
-                background-color: hsl(100, 50%, 50%);
+                background-color: hsl(150, 50%, 40%);
+            }
+
+            .title {
+                width: 100%;
+                
+                padding: 5px 0;
+
+                text-align: center;
+                font-size: larger;
+                
+            }
+
+            .red-zone .title {
+                background-color: hsl(350, 60%, 50%);
+            }
+
+            .yellow-zone .title {
+                background-color: hsl(50, 100%, 50%);
+            }
+
+            .green-zone .title {
+                background-color: hsl(150, 50%, 50%);
             }
 
             .drag-el{
@@ -179,6 +200,8 @@
 
                 background-color: rgba(255, 255, 255, 0.9);
                 color:black;
+
+                cursor: pointer;
             }
 
             .drag-el:hover{
